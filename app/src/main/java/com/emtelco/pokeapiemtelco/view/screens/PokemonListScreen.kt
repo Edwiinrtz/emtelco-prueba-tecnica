@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -61,6 +62,7 @@ fun PokemonListScreen(viewModel: PokemonListViewModel, goCart: () -> Unit){
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
+            .navigationBarsPadding()
             .padding(0.dp),
         bottomBar = {
             Row(modifier = Modifier

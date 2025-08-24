@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -55,7 +56,7 @@ fun CartScreen(viewModel: PokemonCartViewModel, goBack: () -> Unit, activity:Fra
     val vibrator = context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
 
     Scaffold(
-        modifier = Modifier.clickable { focusManager.clearFocus() },
+        modifier = Modifier.navigationBarsPadding().clickable { focusManager.clearFocus() },
         topBar = {
             Row (modifier = Modifier.fillMaxWidth().padding(0.dp, 32.dp), horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically){
                     IconButton(onClick = {goBack()}) {
