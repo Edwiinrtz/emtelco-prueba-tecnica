@@ -1,61 +1,58 @@
-
-# Prueba tecnica - desarrollador CRM - mobile
+# Prueba técnica - Desarrollador CRM - Mobile
 
 ## Objetivo
 
-Desarrollar aplicacion mobile (stack a libre eleccion) que cuente con 2 pantallas:
+Desarrollar una aplicación móvil (stack a libre elección) que cuente con 2 pantallas:
 
-- Catalogo de pokemons
+- Catálogo de Pokémon
 - Carrito de compras
 
 ### Requisitos
 
-- Cada item del catalogo puede agregarse al carrito.
-- Simular los precios de los pokemons
-- Poder eliminar elemento del carrito
-- Posibilidad de trabajar sin conexión
+- Cada ítem del catálogo puede agregarse al carrito.
+- Simular los precios de los Pokémon.
+- Poder eliminar elementos del carrito.
+- Posibilidad de trabajar sin conexión.
 
+## Instalación
 
-## Instalacion
-
-Clonar el proyecto desde github:
+Clonar el proyecto desde GitHub:
 
 ```
 git clone https://github.com/Edwiinrtz/emtelco-prueba-tecnica.git
-
 ```
 
-O si es su preferencia descargar el archivo .zip:  https://github.com/Edwiinrtz/emtelco-prueba-tecnica/archive/refs/heads/main.zip
 
-Este descargará un archivo llamado *emtelco-prueba-tecnica-main.zip* descomprima y en ambos casos encontrará una carpeta llamada  *emtelco-prueba-tecnica* o *emtelco-prueba-tecnica-main*
+O, si es su preferencia, descargar el archivo .zip:  
+https://github.com/Edwiinrtz/emtelco-prueba-tecnica/archive/refs/heads/main.zip
+
+Este descargará un archivo llamado *emtelco-prueba-tecnica-main.zip*. Descomprímalo y en ambos casos encontrará una carpeta llamada *emtelco-prueba-tecnica* o *emtelco-prueba-tecnica-main*.
 
 Ejecute Android Studio y abra la carpeta del proyecto.
 
 ## Ejecución del proyecto
 
-Puede ejecutar el proyecto en emuladores virtuales, para ello desde el IDE debe crear uno en la sección
+Puede ejecutar el proyecto en emuladores virtuales; para ello, desde el IDE debe crear uno en la sección:
 
 ```
-    Device manager > Add a new device > Create virtual device
+Device Manager > Add a new device > Create Virtual Device
 ```
 
-Podrá selecccionar el hardware preferido pero es obligatorio que la version de Android sea como minimo __ANDROID 13__ o __API 33__
+Podrá seleccionar el hardware preferido, pero es obligatorio que la versión de Android sea como mínimo **ANDROID 13** o **API 33**.
 
-Tambien puede ejecutar el software en dispositivos android fisicamente. Tambien respetando las versiones minimas __ANDROID 13__ o __API 33__ del sistema.
-
+También puede ejecutar el software en dispositivos Android físicos, respetando igualmente las versiones mínimas **ANDROID 13** o **API 33** del sistema.
 
 ## Arquitectura
 
-Para el proyecto se optó por utilizar una Arquitectura **mvvm**  -  Model - View - ViewModel
+Para el proyecto se optó por utilizar una arquitectura **MVVM** - Model - View - ViewModel.
 
 ![image mvvm](https://user-images.githubusercontent.com/1812129/68319232-446cf900-00be-11ea-92cf-cad817b2af2c.png)
 
-Se opta por esta Arquitectura  para el desarrollo del aplicativo porque en su escencia está muy bien definido el rol de cada una de sus capaz, lo que hace que el codigo sea más limpio y facil de mantener.
+Se opta por esta arquitectura para el desarrollo del aplicativo porque, en su esencia, está muy bien definido el rol de cada una de sus capas, lo que hace que el código sea más limpio y fácil de mantener.
 
-Tambien facilita la actualización automatica de la interfaz por acciones del usuario o del sistema.
+También facilita la actualización automática de la interfaz por acciones del usuario o del sistema.
 
-## Arbol de carpetas
-
+## Árbol de carpetas
 ```
 kotlin+java/
 └── com.emtelco.pokeapiemtelco/
@@ -74,62 +71,62 @@ kotlin+java/
     └── MyHiltApp
 ```
 
-- **core**: Encontrará una serie de helpers o clases creadas para definir parte de la logica que serpa inyectada en los viewmodels para funcionamiento del aplicativo.
+- **core**: Encontrará una serie de *helpers* o clases creadas para definir parte de la lógica que será inyectada en los *ViewModels* para el funcionamiento del aplicativo.
 
-- __data__: Contiene entities, modelos e interfaces relativa a las obtencion y disposición de los datos en el sistema.
+- **data**: Contiene *entities*, modelos e interfaces relativas a la obtención y disposición de los datos en el sistema.
 
-- __di__: *dependency injection* Contiene los modulos usados por *Dagger hilt* para gestionar la inyección de dependencias en el sistema.
+- **di**: *Dependency Injection*. Contiene los módulos usados por *Dagger Hilt* para gestionar la inyección de dependencias en el sistema.
 
-- __view__: Todo lo relativo a las vistas, componentes, pantallas y themes.
+- **view**: Todo lo relativo a las vistas, componentes, pantallas y *themes*.
 
-- __viewmodel__: ViewModels para cada pantalla del aplicativo.
+- **viewmodel**: *ViewModels* para cada pantalla del aplicativo.
 
 ## Funciones nativas
 
-- __Vibración o feedback háptico__: Está funcion permite al usuario estar seguro sobre una acción que no es muy visible en el sistema. Fue implementada especificamente al momento de agregar un pokemon al carrito de compra y al eliminarlo del carrito de compra.
+- **Vibración o *feedback* háptico**: Esta función permite al usuario estar seguro sobre una acción que no es muy visible en el sistema. Fue implementada específicamente al momento de agregar un Pokémon al carrito de compra y al eliminarlo.
 
-- __Notificaciones__: Mejora la experiencia e intreracción de usuario en el uso del sistema. Alerta sobre el estado de conexion a internet o cuando una compra de pokemons finaliza.
+- **Notificaciones**: Mejoran la experiencia e interacción del usuario en el uso del sistema. Alertan sobre el estado de conexión a internet o cuando una compra de Pokémon finaliza.
 
-- __Sensor de huella o contraseña__: Al simular una compra dentro de la aplicación, el componente de seguridad es un plus llamativo para el usuario.
+- **Sensor de huella o contraseña**: Al simular una compra dentro de la aplicación, el componente de seguridad es un plus llamativo para el usuario.
 
 ## Testing
 
-Se realizaron pruebas unitarias par los viewModel unicamente, pues en ellos se sentra la mayoria de logica implementada.
+Se realizaron pruebas unitarias para los *ViewModels* únicamente, pues en ellos se centra la mayoría de la lógica implementada.
 
-para ejecutar los test unitatiros puede hacerse desde console gradle  o execute gradle task con el comando.
-
+Para ejecutar los tests unitarios, puede hacerse desde la consola con Gradle o ejecutar la tarea Gradle con el comando:
 ```
- gradle test
+gradle test
 ```
-
-o individualmente desde los archivos
-
+O individualmente desde los archivos:
 ```
 package com.emtelco.pokeapiemtelco.viewmodel
 
 ├── PokemonCartViewModelTest
 └── PokemonListViewModelTest
-
 ```
-## Analisis visual
 
-#### dashboard
+## Análisis visual
 
-El diseño de la aplicación tiene un enfoque minimalista y sencillo. en la primer pantalla encontrará un grid de 2 columnas donde verá listado cada uno de los pokemon disponibles. __clic__ o __tap__ sombre cada pokemon lo agregará al carrito solo 1 vez.
+#### Dashboard
 
-En la zona inferio derecha de la pantalla hay un botón que lo dirigé a la segunda pantalla.
+El diseño de la aplicación tiene un enfoque minimalista y sencillo. En la primera pantalla encontrará un *grid* de 2 columnas donde verá listado cada uno de los Pokémon disponibles. Un **clic** o **tap** sobre cada Pokémon lo agregará al carrito solo 1 vez.
+
+En la zona inferior derecha de la pantalla hay un botón que lo dirigirá a la segunda pantalla.
 
 <img src="https://lh3.googleusercontent.com/d/1IwByeqiky18JLMywzdMzc2PXEkcEMSsS" alt="dashboard" height="600"/>
 
-
 #### Carrito de compra
 
-El carrito de compra cuenta con la opcion de regresar al menu principal, el listado de items por comprar y en la parte inferior boton de pago y total a pagar.
+El carrito de compra cuenta con la opción de regresar al menú principal, el listado de ítems por comprar y, en la parte inferior, botón de pago y total a pagar.
 
-Cada uno de los item tiene la opcion de aumentar la cantidad de items a comprar, cada cambio actualiza el costo individual y total. Se puedeeliminar un item si se presiona el cesto de basura correspondiente a sí mismo.
+Cada uno de los ítems tiene la opción de aumentar la cantidad a comprar; cada cambio actualiza el costo individual y total. Se puede eliminar un ítem si se presiona el cesto de basura correspondiente.
 
-<iframe src="https://drive.google.com/file/d/1c-gc7LjHgOciLixhrU-VR-b0oEklVsZs/preview" width="640" height="480" allowfullscreen></iframe>
+<img src="https://lh3.googleusercontent.com/d/1PUXoOxT6p9GNQMg7XPGZ5ekJe1l0OSMd" alt="dashboard" height="600"/>
 
-### link apk
+### Video de presentación
 
-<a href="https://www.mediafire.com/file/pmf2agdw9oduqjh/poke-emtelco.apk/file" > descargar </a>
+https://drive.google.com/file/d/1c-gc7LjHgOciLixhrU-VR-b0oEklVsZs/view?usp=sharing
+
+### Link APK
+
+<a href="https://www.mediafire.com/file/pmf2agdw9oduqjh/poke-emtelco.apk/file">Descargar</a>
